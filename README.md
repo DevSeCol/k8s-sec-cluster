@@ -1,1 +1,1 @@
-# k8s-spark-cluster
+# Spark Cluster
