@@ -40,7 +40,7 @@ jobs:
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
-      run: terraform plan -var="project=${{ secrets.PROJECT }}" -var="region=${{ secrets.REGION }}" -var="${{ secrets.ZONE }}" -var="cluster_name=${{ secrets.CLUSTER_NAME }}" -var="cluster_network=${{ secrets.CLUSTER_NETWORK }}" -var="cluster_subnetwork=${{ secrets.CLUSTER_SUBNETWORK }}" -var="machine_type=${{ secrets.MACHINE_TYPE }}" -var="service_account=${{ secrets.SERVICE_ACCOUNT }}"
+      run: terraform plan -var="project=${{ secrets.PROJECT }}" -var="region=${{ secrets.REGION }}" -var="zone=${{ secrets.ZONE }}" -var="cluster_name=${{ secrets.CLUSTER_NAME }}" -var="cluster_network=${{ secrets.CLUSTER_NETWORK }}" -var="cluster_subnetwork=${{ secrets.CLUSTER_SUBNETWORK }}" -var="machine_type=${{ secrets.MACHINE_TYPE }}" -var="service_account=${{ secrets.SERVICE_ACCOUNT }}"
     
       # On push to master, build or change infrastructure according to Terraform configuration files
       # Note: It is recommended to set up a required "strict" status check in your repository for "Terraform Cloud". See the documentation on "strict" required status checks for more information: https://help.github.com/en/github/administering-a-repository/types-of-required-status-checks
