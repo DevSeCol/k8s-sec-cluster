@@ -1,16 +1,16 @@
 provider "google" {
   project = var.project
-  region = var.region
-  zone = var.zone
+  region  = var.region
+  zone    = var.zone
 }
 
 resource "google_container_cluster" "cluster" {
-  name                      = var.cluster_name
-  location                  = var.zone
-  remove_default_node_pool  = true
-  initial_node_count        = 1
-  network                   = var.cluster_network
-  subnetwork                = var.cluster_subnetwork
+  name                     = var.cluster_name
+  location                 = var.zone
+  remove_default_node_pool = true
+  initial_node_count       = 1
+  network                  = var.cluster_network
+  subnetwork               = var.cluster_subnetwork
 }
 
 resource "google_container_node_pool" "preemptible_nodes" {
@@ -22,9 +22,9 @@ resource "google_container_node_pool" "preemptible_nodes" {
   node_config {
     preemptible  = true
     machine_type = var.machine_type
-    
+
     service_account = var.service_account
-    
+
     labels = {
       machine-type = "preemtible"
     }
