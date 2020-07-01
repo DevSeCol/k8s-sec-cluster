@@ -40,6 +40,8 @@ jobs:
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
+      env:
+        GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.TF_API_TOKEN }}
       run: terraform plan -var="project=${{ secrets.PROJECT }}" -var="region=${{ secrets.REGION }}" -var="zone=${{ secrets.ZONE }}" -var="cluster_name=${{ secrets.CLUSTER_NAME }}" -var="cluster_network=${{ secrets.CLUSTER_NETWORK }}" -var="cluster_subnetwork=${{ secrets.CLUSTER_SUBNETWORK }}" -var="machine_type=${{ secrets.MACHINE_TYPE }}" -var="service_account=${{ secrets.SERVICE_ACCOUNT }}"
     
       # On push to master, build or change infrastructure according to Terraform configuration files
