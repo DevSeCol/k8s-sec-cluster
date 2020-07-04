@@ -1,9 +1,3 @@
-provider "google" {
-  project = var.project
-  region  = var.region
-  zone    = "${var.region}-b"
-}
-
 resource "google_container_cluster" "primary-cluster" {
   name                     = var.cluster_name
   location                 = var.region
