@@ -40,7 +40,7 @@ jobs:
 
     # Create the service account file
     - name: Service account activation
-      run: echo ${{ secrets.TF_SERVICE_ACCOUNT }} > TF_SERVICE_ACCOUNT.json
+      run: echo "${{ secrets.TF_SERVICE_ACCOUNT }}" > TF_SERVICE_ACCOUNT.json
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
