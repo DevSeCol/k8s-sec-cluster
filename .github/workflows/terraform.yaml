@@ -44,7 +44,7 @@ jobs:
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
-      env: GOOGLE_APPLICATION_CREDENTIALS="./TF_SERVICE_ACCOUNT.json"
+      env: GOOGLE_APPLICATION_CREDENTIALS: "./TF_SERVICE_ACCOUNT.json"
       run: terraform plan
     
       # On push to master, build or change infrastructure according to Terraform configuration files
