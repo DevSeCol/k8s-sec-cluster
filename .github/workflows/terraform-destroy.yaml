@@ -1,4 +1,5 @@
 name: 'Terraform destroy'
+on: ['destroy']
 
 jobs:
   terraform:
