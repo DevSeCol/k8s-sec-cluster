@@ -9,8 +9,8 @@ resource "google_container_cluster" "primary-cluster" {
 
 resource "google_container_node_pool" "preemptible_nodes" {
   name       = "primary-pool"
-  location   = google_container_cluster.cluster.location
-  cluster    = google_container_cluster.cluster.name
+  location   = google_container_cluster.primary-cluster.location
+  cluster    = google_container_cluster.primary-cluster.name
   node_count = 1
 
   node_config {
