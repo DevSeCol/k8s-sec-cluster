@@ -1,5 +1,12 @@
 name: 'Terraform destroy'
 
+on:
+  push:
+    # Sequence of patterns matched against refs/heads
+    branches:    
+      # Push events to branches matching refs/heads/releases/10
+      - 'destroy/**'
+
 jobs:
   terraform:
     name: 'Terraform destroy'
