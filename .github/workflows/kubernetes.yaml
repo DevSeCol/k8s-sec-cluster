@@ -24,7 +24,7 @@ on:
 env:
   GKE_PROJECT: ${{ secrets.PROJECT_ID }}
   GITHUB_SHA: ${{ github.sha }}
-  GKE_ZONE: us-central1-a
+  GKE_ZONE: us-central1
   GKE_CLUSTER: k8s-sec-cluster
   IMAGE: vulnerables/web-dvwa
   REGISTRY_HOSTNAME: gcr.io
